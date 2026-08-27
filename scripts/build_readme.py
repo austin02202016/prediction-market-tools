@@ -51,6 +51,7 @@ out.append("- **Descriptions** describe function. We do not repeat accuracy perc
 out.append("- Every field has a `sources` list in `tools.json` with the pages we loaded.\n")
 out.append("## Contributing\n")
 out.append("Add a tool by adding an object to `tools.json` and running `python3 scripts/build_readme.py`. Required: name, url, category, description (your own words, under 30 words), venues, executes_trades, pricing, status, status_note, last_verified, sources. Vendors may submit their own tool; say so in the PR. Entries with unverifiable claims are edited, not rejected.\n")
+out.append("Maintained by the team at [Kairos](https://kairos.trade), a cross-venue prediction market terminal listed above. Kairos is one row in this table and is held to the same evidence rules as every other entry.\n")
 out.append("## License\n")
 out.append("Data (`tools.json`) and text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: MIT.\n")
 (ROOT / "README.md").write_text("\n".join(out))

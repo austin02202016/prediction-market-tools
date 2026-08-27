@@ -9,6 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: python3 scripts/validate.py
-      - run: python3 scripts/build_readme.py && git diff --exit-code README.md || (echo "README.md is out of date: run scripts/build_readme.py" && exit 1)
+        with:
+          python-version: "3.12"
+      - name: Validate tools.json
+        run: python3 scripts/validate.py
+      - name: README is generated from tools.json
+        run: |
+          python3 scripts/build_readme.py
+          if ! git diff --quiet README.md; then
+            echo "README.md is out of date. Run: python3 scripts/build_readme.py"
+            git diff --stat
+            exit 1
+          fi

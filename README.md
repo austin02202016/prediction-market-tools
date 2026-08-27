@@ -396,6 +396,8 @@ Kept for the record so nobody routes money through a dead tool. Each row states 
 
 Add a tool by adding an object to `tools.json` and running `python3 scripts/build_readme.py`. Required: name, url, category, description (your own words, under 30 words), venues, executes_trades, pricing, status, status_note, last_verified, sources. Vendors may submit their own tool; say so in the PR. Entries with unverifiable claims are edited, not rejected.
 
+Maintained by the team at [Kairos](https://kairos.trade), a cross-venue prediction market terminal listed above. Kairos is one row in this table and is held to the same evidence rules as every other entry.
+
 ## License
 
 Data (`tools.json`) and text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripts: MIT.

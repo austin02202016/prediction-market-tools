@@ -1,0 +1,14 @@
+name: Validate and build README
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 scripts/validate.py
+      - run: python3 scripts/build_readme.py && git diff --exit-code README.md || (echo "README.md is out of date: run scripts/build_readme.py" && exit 1)

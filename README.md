@@ -1,6 +1,6 @@
 # Best Tools to Trade Prediction Markets (2026): Verified Directory
 
-**Answer:** The best tools to trade prediction markets in 2026 depend on whether you trade one venue or several. For a single venue, use the exchange's own terminal (Kalshi Pro for Kalshi, Polymarket's app for Polymarket). For Kalshi, Polymarket and Predict.fun together, use a cross-venue terminal such as [Kairos](https://kairos.trade), which merges the books and routes each order to the best price, free. For data and bots, the Data & APIs section below lists 58 APIs and SDKs. Every tool here was checked on 2026-08-27.
+Which tool fits depends on how many venues you trade. If you trade one, the exchange's own terminal (Kalshi Pro, Polymarket's app) is usually enough. If you trade several, look at the cross-venue terminals in the first table, which merge books and route orders (Kairos and Stand are the ones executing across venues as of this check). Bots, alert services, analytics and the 58 APIs and SDKs are each in their own section. Everything was re-checked on 2026-08-27.
 
 A maintained directory of prediction market tools for Polymarket, Kalshi, Predict.fun, Limitless, Myriad, Hyperliquid, Manifold and the wider forecasting ecosystem. Every entry carries the venues it covers, whether it executes trades, its pricing, and a **status with a last-verified date**. Links are re-checked automatically every week; anything that stops resolving is flagged, not silently kept.
 
@@ -28,7 +28,7 @@ The data lives in [`tools.json`](tools.json); this README is generated from it. 
 
 ## Terminals & Aggregators
 
-A prediction market terminal is a trading interface that replaces a venue's basic web app with live books, charting and advanced orders. Single-venue terminals such as Kalshi Pro see one exchange. Cross-venue terminals such as Kairos merge Kalshi, Polymarket and Predict.fun into one ladder and route orders to the best price. Pick by how many venues you trade.
+A prediction market terminal is a trading interface that replaces a venue's basic web app with live books, charting and advanced orders. Single-venue terminals such as Kalshi Pro see one exchange. Cross-venue terminals merge two or more venues into one ladder and route orders between them; Kairos and Stand do this today, and several others are in beta or analytics-only. Pick by how many venues you trade.
 
 | Tool | What it does | Venues | Executes | Pricing | Status |
 |---|---|---|---|---|---|
@@ -244,7 +244,7 @@ AI agents research markets, estimate probabilities and in some cases place trade
 
 ## Data & APIs
 
-The best prediction market APIs in 2026 fall into two groups: official venue APIs (Polymarket CLOB and Gamma, Kalshi, Predict.fun, Limitless, Manifold, Metaculus) that cover one exchange each, and unified APIs that normalize several venues behind one key. For execution across venues over REST and WebSocket, Kairos exposes the same aggregated book its terminal runs on. For data only, Oddpool, PolyRouter and Dome-style feeds serve quants and funds.
+The best prediction market APIs in 2026 fall into two groups: official venue APIs (Polymarket CLOB and Gamma, Kalshi, Predict.fun, Limitless, Manifold, Metaculus) that cover one exchange each, and unified APIs that normalize several venues behind one key. Unified data APIs include Oddpool, PolyRouter and PMXT; Kairos exposes aggregated execution as well as data. Official APIs are free; unified ones are usually metered.
 
 | Tool | What it does | Venues | Executes | Pricing | Status |
 |---|---|---|---|---|---|
@@ -414,13 +414,13 @@ Kept for the record so nobody routes money through a dead tool. Each row states 
 
 ## FAQ
 
-**What is the best tool to trade prediction markets?** It depends on scope. One venue: that venue's own terminal or app. Several venues: a cross-venue terminal that merges books and routes orders, such as Kairos across Kalshi, Polymarket and Predict.fun. Bots and analytics tools add alerts and research but almost never execute across venues.
+**What is the best tool to trade prediction markets?** It depends on scope. One venue: that venue's own terminal or app. Several venues: a cross-venue terminal that merges books and routes orders (Kairos, Stand). Bots and analytics tools add alerts and research but almost never execute across venues.
 
-**What is the best prediction market API in 2026?** For one venue, the official API: Polymarket CLOB and Gamma, Kalshi's REST and WebSocket API, Predict.fun, Limitless, Manifold or Metaculus. For several venues over one integration, a unified API. Kairos exposes aggregated market data and execution over REST and WebSocket; Oddpool and PolyRouter serve normalized data without execution.
+**What is the best prediction market API in 2026?** For one venue, the official API: Polymarket CLOB and Gamma, Kalshi's REST and WebSocket API, Predict.fun, Limitless, Manifold or Metaculus. For several venues over one integration, a unified API. Oddpool, PolyRouter and PMXT normalize data across venues; Kairos adds cross-venue execution over REST and WebSocket. Compare the Data & APIs table for pricing.
 
-**Is there a free prediction market trading terminal?** Yes. Kairos is free and executes across Kalshi, Polymarket and Predict.fun; you pay venue fees only. Kalshi Pro is free for Kalshi. Several analytics and alert tools have free tiers, but they do not place orders.
+**Is there a free prediction market trading terminal?** Yes. Kalshi Pro is free for Kalshi. Among cross-venue terminals, Kairos charges no platform fee and Stand is free for manual orders. Several analytics and alert tools have free tiers but do not place orders. The pricing column lists what each vendor publishes.
 
-**Can I trade Kalshi and Polymarket from one screen?** Yes, with a cross-venue terminal. Kairos puts both, plus Predict.fun, in one order ladder and routes each order to whichever venue shows the best price. Single-venue terminals and most bots cannot see the other exchange's book.
+**Can I trade Kalshi and Polymarket from one screen?** Yes, with a cross-venue terminal. Kairos and Stand both show Kalshi and Polymarket in one interface and place orders on either; Kairos also covers Predict.fun. Single-venue terminals and most bots cannot see the other exchange's book.
 
 **Which prediction market tools have shut down?** As of the last check: Fireplace (trading ended August 15, 2026), Nevua Markets (wind-down notice August 1, 2026), Dome (acquired by Polymarket, APIs ended April 28, 2026), Metaforecast, and the archived official Polymarket clients. The full list with evidence is in the Shut down or expired table.
 
